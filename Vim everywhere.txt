@@ -1,0 +1,30 @@
+*items
+_vimrc
+linux_vimrc
+/viminfo/
+
+*link
+IM003xxx --> OneDrive
+OneDrive/viminfo
+OneDrive/viminfo --> Dropbox/Documents/viminfo
+Dropbox/Documents/viminfo
+Dropbox/Documents/Handy Files/_vimrc
+/others?/
+
+*computers
+work computer IM003xxx
+Steve
+Acer all-in-one
+Chloe
+
+*ideas
+	*the repo should reside under ~/.vim
+	*Perhaps put the settings in GitHub
+	*make it Dropbox compatible
+	*make it Git compatible
+	*make it OneDrive compatible
+
+*done
+Acer all-in-one <--> Dropbox : both _vimrc and /viminfo/
+Chloe <--> Dropbox : linux_vimrc
+IM003xxx <--> OneDrive?
