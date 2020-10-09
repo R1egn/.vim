@@ -30,8 +30,8 @@ syn case ignore
 set ic
 
 " Strings with double quotes (") can contain macros, single quotes (') can not. (Donald Wildeboer)
-syn region sasString	start=+"+  skip=+\\\\\|\\"+  end=+"+ contains=@Spell,sasMacro,sasMacroVar
-syn region sasString	start=+'+  skip=+\\\\\|\\"+  end=+'+ contains=@Spell
+syn region sasString	start=+"+  skip=+\\\\+  end=+"+ contains=@Spell,sasMacro,sasMacroVar
+syn region sasString	start=+'+  skip=+\\\\+  end=+'+ contains=@Spell
 
 " Want region from 'cards;' to ';' to be captured
 syn region sasCards	start="^\s*CARDS.*" end="^\s*;\s*$"

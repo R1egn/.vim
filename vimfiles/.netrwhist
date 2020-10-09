@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='C:\Users\dwildeboer'
+let g:netrw_dirhist_2='C:/Users/dwildeboer'
+let g:netrw_dirhist_3='C:\Users\dwildeboer'
+let g:netrw_dirhist_4='C:\Users\dwildeboer\Desktop'
+let g:netrw_dirhist_5='C:\Users\dwildeboer'
+let g:netrw_dirhist_6='R:\Corp Data Mgt\DWildeboer\Federal\Sent\2015-10 October'
+let g:netrw_dirhist_7='D:\doc\Dropbox\Documents\Notes'
+let g:netrw_dirhist_8='r:\Corp Data Mgt\DWildeboer\Federal\Forecast AAFM Format'
