@@ -1,3 +1,5 @@
-
 # this file was on chloe and not sure what it is for
-.netrwhist
+/.netrwhist
+
+# keep copies locally
+/backup*

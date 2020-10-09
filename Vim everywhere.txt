@@ -1,34 +1,43 @@
 *restrictions
-- A major restriction that I have is that on my work computer IM003xxx I only have OneDrive.
-- A major general idea is that all filesystem stuff should point to the repo.
+	- A major general idea is that all filesystem stuff should point to 
+	  the repo. Is that a good idea? Or should the repo contain scripts to 
+	  push out settings to where Vim expects them. Or should Vim be set to 
+	  look for the repo.
+	- Hold up!!!! Why use OneDrive or Dropbox at all for syncing, it can 
+	  just be a backup.
+	- A major restriction that I have is that on my work computer IM003327 
+	  I only have OneDrive and Dropbox isn't allowed.
 
 *items
-_vimrc
-linux_vimrc
-/viminfo/
+	_vimrc
+	linux_vimrc
+	/viminfo/
 
 *link
-IM003xxx --> OneDrive
-OneDrive/viminfo
-OneDrive/viminfo --> Dropbox/Documents/viminfo
-Dropbox/Documents/viminfo
-Dropbox/Documents/Handy Files/_vimrc
-/others?/
+	IM003327 --> OneDrive
+	OneDrive/viminfo
+	OneDrive/viminfo --> Dropbox/Documents/viminfo
+	Dropbox/Documents/viminfo
+	Dropbox/Documents/Handy Files/_vimrc
+	/others?/
 
 *computers
-work computer IM003xxx
-Steve
-Acer all-in-one
-Chloe
+	IM003327 This has the most settings setup. Really the source.
+	Steve
+	2Face
+	Chloe
 
 *ideas
-	*the repo should reside under ~/.vim
-	*Perhaps put the settings in GitHub
-	*make it Dropbox compatible
-	*make it Git compatible
-	*make it OneDrive compatible
+	- the repo should reside under ~/.vim
+	- Perhaps put the settings in GitHub
+	- make it Git compatible
+	- make it Dropbox compatible. Push to here?
+	- make it OneDrive compatible?
+
+*todo
+	- change _vimrc to point to ~/.vim
 
 *done
-Acer all-in-one <--> Dropbox : both _vimrc and /viminfo/
-Chloe <--> Dropbox : linux_vimrc
-IM003xxx <--> OneDrive?
+	- Acer all-in-one <--> Dropbox : both _vimrc and /viminfo/
+	- Chloe <--> Dropbox : linux_vimrc
+	- IM003327 <--> OneDrive?
