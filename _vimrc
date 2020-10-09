@@ -157,10 +157,11 @@ nmap <C-PageDown> :set guifont=Courier_New:h9:cANSI<CR>
 
 
 " Other
-set cmdheight=2		" Make command line two lines high
+set cmdheight=2			" Make command line two lines high
 
-set mousehide		" Hide the mouse when typing text
-set mousemodel=popup_setpos " Right mouse button action
+set mousehide			" Hide the mouse when typing text
+set mousemodel=popup_setpos	" Right mouse button action
+set mouse=a 			" turn mouse on from command line TODO test that this is nice
 
 " Switch on syntax highlighting if it wasn't on yet.
 if !exists("syntax_on")
