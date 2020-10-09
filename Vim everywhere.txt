@@ -1,3 +1,7 @@
+*restrictions
+- A major restriction that I have is that on my work computer IM003xxx I only have OneDrive.
+- A major general idea is that all filesystem stuff should point to the repo.
+
 *items
 _vimrc
 linux_vimrc
