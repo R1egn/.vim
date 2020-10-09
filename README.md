@@ -1,50 +1,57 @@
 # .vim
 All my vim settings from all my computers all in one spot!
 
-Issue is things shouldn't break on individual computers.
 
 ## restrictions
-- A major general idea is that all file system stuff should point to the repo.  
-  Is that a good idea? Or should the repo contain scripts to push out settings 
-  to where Vim expects them. Or should Vim be set to look for the repo.
+- Things shouldn't break on individual computers.
+- All file system stuff should point to the files inside the repo. Is that a 
+  good idea? Or should the repo contain scripts to push out settings to where 
+  Vim expects them. Or should Vim be set to look for the repo.
 - A major restriction that I have is that on my work computer IM003327 I only 
   have OneDrive and Dropbox isn't allowed.
 - Hold up!!!! Why use OneDrive or Dropbox at all for syncing, it can just be a 
-  backup.
+  backup and the main tool is Git.
 
-## items
+## items to track
 - \_vimrc
 - linux\_vimrc
 - /viminfo/
 
-## link
-- TODO remove from Dropbox and OneDrive and just leave a note there.
-- OneDrive/viminfo --> Dropbox/Documents/viminfo
-- Dropbox/Documents/viminfo
-- Dropbox/Documents/Handy Files/\_vimrc
-- /others?/
+## link to change
+- TODO remove from Dropbox and just leave a note there.
+	- Dropbox/Documents/viminfo
+	- Dropbox/Documents/Handy Files/\_vimrc
+- _others?_
 
-## computers starting with branching
+## computers 
 - IM003327 This has the most settings setup. Really the source.
-- Steve
-- 2Face
+	- DONE in branch IM003327
+	- TODO setup command line
+	- TODO this is really going to be the master branch
 - Chloe
+	- TODO linked to linux.vimrc
+	- TODO make a branch
+	- TODO Add viminfo & test
+- Steve
+	- TODO setup and make a branch
+- 2Face
+	- DONE in branch 2Face
 
 ## ideas
 - the repo should reside under ~/.vim
-- Repo upstream in GitHub
+- Repo upstream in GitHub at https://github.com/R1egn/.vim/
 - make it Git compatible
 - make it Dropbox compatible. Push to here? No - this is not needed.
 - make it OneDrive compatible? No - this is not needed.
 
 ## todo
-- change \_vimrc to point to ~/.vim
+- change inside \_vimrc to make Vim look for vimfiles first at ~/.vim/vimfiles
 
 ## done
 - Acer all-in-one <--> Dropbox : both \_vimrc and /viminfo/
 - Chloe <--> Dropbox : linux\_vimrc
-- IM003327 : c:\users\dwildeboer\\_vimrc <<===>> c:\users\dwildeboer\.vim\\_vimrc
-- IM003327 : %appdata%\Vim\vimfiles <<===>> c:\users\dwildeboer\.vim\vimfiles
+- IM003327 : ~\_vimrc <<===>> ~\\.vim\\\_vimrc
+- IM003327 : %appdata%\Vim\vimfiles <<===>> c:\users\dwildeboer\\.vim\vimfiles
 
 
 
