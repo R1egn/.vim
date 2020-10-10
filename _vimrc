@@ -91,6 +91,8 @@ noremenu  <script> &Tools.&Diff.To\ &Last\ change<Tab>[c  [c
 
 
 " Tab page stuff Arrow Keys
+" Doesn't work through Cockpit
+" TODO Test through Putty
 map  <silent> <a-up> :tabnew<return>
 imap <silent> <a-up> <esc>:tabnew<return>
 map  <silent> <a-n> :tabnew<return>
@@ -113,7 +115,6 @@ map  <silent> <a-j> :tabnext<return>
 imap <silent> <a-j> <esc>:tabnext<return>
 map  <silent> <a-k> :tabprevious<return>
 imap <silent> <a-k> <esc>:tabprevious<return>
-
 
 " Ctrl-Shift u for uppercase the selection (like in SAS)
 vmap <C-S-U> U
@@ -221,9 +222,6 @@ set balloondelay=400
 " Use the increment.vim plugin to increment the numbers
 vnoremap <c-i> :Inc<CR>
 
-" set window minimum height = 0
-set winminheight=0
-
 " When a file has been detected to have been changed outside of Vim and it has
 " not been changed inside of Vim, automatically read it again.
 set autoread
@@ -236,6 +234,7 @@ set autoread
 "	uhex		Show unprintable characters hexadecimal as <xx>
 "			instead of using ^C and ~C.
 set display=lastline,uhex
+set winminheight=0
 
 " Shift-tab to unindent the current line one tab stop.
 " NOTE this messes with autotab completion
