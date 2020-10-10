@@ -1,83 +1,71 @@
 # .vim
 All my vim settings from all my computers all in one spot!
 
-
 ## restrictions
 - Things shouldn't break on individual computers.
 - All file system stuff should point to the files inside the repo. Is that a 
-  good idea? Or should the repo contain scripts to push out settings to where 
-  Vim expects them. Or should Vim be set to look for the repo.
-- A major restriction that I have is that on my work computer IM003327 I only 
-  have OneDrive and Dropbox isn't allowed.
-- Hold up!!!! Why use OneDrive or Dropbox at all for syncing, it can just be a 
-  backup and the main tool is Git.
+  good idea? (Yes it is.) ~~Should the repo contain scripts to push out 
+  settings to where Vim expects them.~~ Or should Vim be set to look for the 
+  repo. (Yes)
 
-## items to track
+## items that are tracked
 - \_vimrc
-- linux\_vimrc
+- linux\_vimrc (merge into \_vimrc)
 - /viminfo/
 
-## link to change
-- TODO remove from Dropbox and just leave a note there.
+## TODO
+- remove from Dropbox and just leave a note there pointing to GitHub.
 	- Dropbox/Documents/viminfo
 	- Dropbox/Documents/Handy Files/\_vimrc
-- _others?_
-
-## computers 
-- IM003327 This has the most settings setup. Really the source.
-	- DONE in branch IM003327
-	- TODO setup command line
-	- TODO this is really going to be the master branch
 - Chloe
-	- TODO linked to linux.vimrc
-	- TODO make a branch
-	- TODO Add viminfo & test
+	- get Git repo
+	- link to \_vimrc
+	- test plugins
+- IM003327 This originally had the most settings setup. Really the source.
+	- setup command line vim to have mouse & scroll
+	- make sure the vimfiles is linked to repo
+	- remove: ~\_vimrc <<===>> ~\\.vim\\\_vimrc
+	- remove: %appdata%\Vim\vimfiles <<===>> 
+	  c:\users\dwildeboer\\.vim\vimfiles
+- IM00148x
+	- backup old settings (in repo as backup IM148x 2020-10-xx)
+	- setup
 - Steve
-	- TODO setup and make a branch
-- 2Face
-	- DONE in branch 2Face
+	- remove old stuff
+	- setup link
+- 2Face 
+	- in Windows make sure the vimfiles is linked
+	- in Windows remove Links to <--> Dropbox : both \_vimrc and /viminfo/
+- remove the unneeded branches IM003327, 2Face, others? It can all go in 
+  master.
+- merge linux.vimrc into \_vimrc
+- check for new/updated Vim plugins
+- Chloe <--> Dropbox : linux\_vimrc
+- _other_
 
-## ideas
+## done 
+- 2Face DONE in Linux
+- change inside \_vimrc to make Vim look for vimfiles first at ~/.vim/vimfiles
 - the repo should reside under ~/.vim
 - Repo upstream in GitHub at https://github.com/R1egn/.vim/
 - make it Git compatible
-- make it Dropbox compatible. Push to here? No - this is not needed.
-- make it OneDrive compatible? No - this is not needed.
-
-## todo
-- change inside \_vimrc to make Vim look for vimfiles first at ~/.vim/vimfiles
-
-## done
-- Acer all-in-one <--> Dropbox : both \_vimrc and /viminfo/
-- Chloe <--> Dropbox : linux\_vimrc
-- IM003327 : ~\_vimrc <<===>> ~\\.vim\\\_vimrc
-- IM003327 : %appdata%\Vim\vimfiles <<===>> c:\users\dwildeboer\\.vim\vimfiles
-
+- ~~make it Dropbox compatible.~~ Push to here? No - this is not needed.
+- ~~make it OneDrive compatible?~~ No - this is not needed.
 
 
 filesystem links should be manually made
 ==================================================
 
-There will need to be 2 items linked \_vimrc and vimfiles. After trying to 
-write scripts that would craete these links I changed my mind and thought that 
-a manual process is probably much safer.
+In order to setup create ~/\_vimrc linked to \_vimrc in the repo. After trying 
+to write scripts that would create these links I changed my mind and thought 
+that a manual process is probably much safer.
 
-### \_vimrc is under home
-> \_vimrc aka .vimrc
-> home aka ~
-> home aka %userprofile%
-
-The idea is to point the filesytem \_vimrc to the \_vimrc in the repo. Without 
-losing the \_vimrc.
-
-On Windows:
+### On Windows:
 Link local \_vimrc to repo \_vimrc. (Needs admin permissions.)
-`mklink %userprofile%\\_vimrc %userprofile%\.vim\\_vimrc`
 
-On Linux:
-question: should the link be overwritten? Probably yes
-`ln -f '~/.vim/linux.vimrc' ~/.vimrc`
+	`mklink %userprofile%\_vimrc %userprofile%\.vim\_vimrc`
 
+### On Linux:
 
-### viminfo is under ?
-> on my IM003327 it is under %appdata%\Vim
+	`ln '~/.vim/_vimrc' ~/.vimrc`
+

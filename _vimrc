@@ -9,21 +9,25 @@ source $VIMRUNTIME/mswin.vim
 behave mswin
 
 " Stuff I Added:
-set guifont=Consolas:h11:cANSI
-set ai  " Auto-indent
-set formatoptions=tcq " This is what it used to be.
-set formatoptions=tcqrowanlj
+set guifont=Consolas:h12:cANSI
+set ai  			" Auto-indent
+set formatoptions=tcq		" This is what it used to be.
+set formatoptions=tcqrowanlj	" Trying this out for a while it's a bit crazy.
 
 "ft-syntax-omni
 " This uses the current syntax highlighting for completion.  It can be used
 " for any filetype and provides a minimal language-sensitive completion.
 setlocal omnifunc=syntaxcomplete#Complete
 
+" Save all files in one location so as not to leave files everywhere
 " TODO check for directory %appdata%\Vim if it doesn't exist then create it.
-set dir=%appdata%\Vim,%temp%,$TEMP
-set backupdir=%appdata%\Vim,%temp%,$TEMP
-set undodir=%appdata%\Vim,%temp%,$TEMP
+set dir=%appdata%\Vim,%temp%,$TEMP,$TMP,~/tmp,/var/tmp,/tmp
+set backupdir=%appdata%\Vim,%temp%,$TEMP,~/tmp,/var/tmp,/tmp
+set undodir=%appdata%\Vim,%temp%,$TEMP,~/tmp,/var/tmp,/tmp
 set undofile
+
+" Location of Vim customized files (run time files) saved in Git repo.
+set runtimepath+=%userprofile%/.vim/vimfiles,~/.vim/vimfiles
 
 " "inclusive" means that the last character of the selection is included in an
 " operation.  For example, when "x" is used to delete the selection.
@@ -247,9 +251,6 @@ nmap SSA :wa<CR>:mksession! ~/sessions/
 " the command to load a session file. Just type the name of the session you
 " want to load and hit <Enter>.
 nmap SO :wa<CR>:so ~/sessions/
-
-" Location of Vim customized files (run time files).
-set runtimepath+=%appdata%/Vim/vimfiles
 
 
 " vim: backupcopy=yes: nobackup:

@@ -3,3 +3,7 @@
 
 # keep copies locally
 /backup*
+
+# vim temp files
+.*~
+.*.swp
