@@ -9,10 +9,28 @@ source $VIMRUNTIME/mswin.vim
 behave mswin
 
 " Stuff I Added:
-set guifont=Consolas:h12:cANSI
 set ai  			" Auto-indent
-set formatoptions=tcq		" This is what it used to be.
-set formatoptions=tcqrowanlj	" Trying this out for a while it's a bit crazy.
+set formatoptions=crqwanlj	" autowrap comments, use gq
+set gdefault			" ":substitute" flag 'g' is on by default. WARNING can break plugins.
+set showmatch 			" jump to the matching bracket
+" TODO fix indentkeys especially for SAS 
+
+" Set font. This is very system dependant.
+if has("gui_running")
+    if has("gui_win32") || has("gui_win64")
+	set guifont=Consolas:h12:cANSI:qCLEARTYPE
+	" Ctrl PageUp and PageDown zooms in and out with hard-coded settings
+	nmap <C-PageUp> :set guifont=Courier_New:h16:cANSI:qCLEARTYPE<CR>
+	nmap <C-PageDown> :set guifont=Courier_New:h9:cANSI:qCLEARTYPE<CR>
+	" TODO create CTRL-Scroll up and down to zoom font size in and out 1 size at a time
+    elseif has("x11")  " Also for GTK 1
+	:set guifont=Source\ Code\ Pro\ 12
+	nmap <C-PageUp> :set guifont=Source\ Code\ Pro\ 16<CR>
+	nmap <C-PageDown> :set guifont=Source\ Code\ Pro\ 10<CR>
+    elseif has("gui_gtk2") || has("gui_gtk3")
+	:set guifont=Luxi\ Mono\ 12
+    endif
+endif
 
 "ft-syntax-omni
 " This uses the current syntax highlighting for completion.  It can be used
@@ -33,25 +51,23 @@ set runtimepath+=%userprofile%/.vim/vimfiles,~/.vim/vimfiles
 " operation.  For example, when "x" is used to delete the selection.
 set selection=exclusive
 
-" When to start Select mode instead of Visual mode, when a selection is
-" started.
+" When to start Select mode instead of Visual mode, when a selection is started.
 set selectmode=key
 
-set guioptions-=T	" Disable the tool bar.
-set guioptions-=m	" Hide the menu bar
-" keys to show the menu bar
-map  <silent> <a-m> :set guioptions+=m<return>
-imap <silent> <a-m> <esc>:set guioptions+=m<return>
-map  <silent> <a-M> :set guioptions-=m<return>
-imap <silent> <a-M> <esc>:set guioptions-=m<return>
-"TODO Show the menu bar and pass the key in to values where it should be shown 
-"this should be done for <a-f> <a-e> <a-t> <a-s> <a-b> <a-w> <a-p> <a-h> 
+" Hide menu by default Alt-?. Show & hide with F9, F10.
+set guioptions+=k		" Keep the GUI window size when adding/removing a scrollbar
+set guioptions-=T		" Disable the tool bar.
+set guioptions-=m		" Hide the menu bar
+set mousefocus			" window under mouse on gets focus switched with <F9>/<F10>
+" Show the menu bar and pass the key in to values where it should be shown for 
+" <a-f> <a-e> <a-t> <a-s> <a-b> <a-w> <a-p> <a-h>
+for i in ["f","e","t","s","b","w","p","h"]
+	" TODO figure out how open the menu on the first press
+	" TODO remove the toupper(i) when figured out to open menu
+    exec "map  <a-" . i . "> <F9><a-" . toupper(i) . ">"
+    exec "imap <a-" . i . "> <F9><a-" . toupper(i) . ">"
+endfor
 
-" TODO Hide the menu bar until Alt is pressed
-
-" Enable spell checker
-set spl=en_ca spell
-set spell
 
 " different background on line where cursor is
 set cursorline
@@ -88,6 +104,11 @@ inoremenu <script> &Tools.&Diff.To\ &Next\ change<Tab>]c  <C-O>]c
 noremenu  <script> &Tools.&Diff.To\ &Next\ change<Tab>]c  ]c
 inoremenu <script> &Tools.&Diff.To\ &Last\ change<Tab>[c  <C-O>[c
 noremenu  <script> &Tools.&Diff.To\ &Last\ change<Tab>[c  [c
+" NOTE here for handy reference: To tell Git to always use Vimdiff, issue the 
+" following commands:
+" git config --global diff.tool vimdiff
+" git config --global merge.tool vimdiff
+" git config --global difftool.prompt false
 
 
 " Tab page stuff Arrow Keys
@@ -140,14 +161,8 @@ nmap <silent> <F6> :Explore<CR>:echo ":Explore\t\t\tF6 Explore filesystem."<CR>
 nmap <silent> <F7> :echo ":diffthis\t\t\tF7 Diff this current file."<CR>:diffthis<CR>
 nmap <silent> <F8> :echo ":diffupdate\t\t\tF8 Update the diff."<CR>:diffupdate<CR>
 "TODO turn F9 into a toggle!
-nmap <silent> <F9> :set guioptions+=m<CR>:set guioptions+=T<CR>:echo ":set guioptions+=mT\t\tF9 Show menu and toolbar."<CR>
-nmap <silent> <F10> :set guioptions-=m<CR>:set guioptions-=T<CR>:echo ":set guioptions-=mT\t\tF10 Hide menu and toolbar."<CR>
-
-
-" Ctrl PageUp and PageDown zooms in and out with hardcoded settings
-nmap <C-PageUp> :set guifont=Courier_New:h16:cANSI<CR>
-nmap <C-PageDown> :set guifont=Courier_New:h9:cANSI<CR>
-" TODO create CTRL-Scroll up and down to zoom font size in and out
+nmap <silent> <F9> :set guioptions+=mT<CR>:set nomousefocus<CR>:echo ":set guioptions+=mT\t\tF9 Show menu and toolbar."<CR>
+nmap <silent> <F10> :set guioptions-=mT<CR>:set mousefocus<CR>:echo ":set guioptions-=mT\t\tF10 Hide menu and toolbar."<CR>
 
 
 " MAP SQL database thing 
@@ -163,33 +178,26 @@ nmap <C-PageDown> :set guifont=Courier_New:h9:cANSI<CR>
 
 " Other
 set cmdheight=2			" Make command line two lines high
-
 set mousehide			" Hide the mouse when typing text
 set mousemodel=popup_setpos	" Right mouse button action
 set mouse=a 			" turn mouse on from command line TODO test that this is nice
-
-" Switch on syntax highlighting if it wasn't on yet.
 if !exists("syntax_on")
-  syntax on
+  syntax on			" Switch on syntax highlighting
 endif
-
-" Switch on search pattern highlighting.
-set hlsearch
-
+set hlsearch			" Switch on search pattern highlighting.
 " Text below the last line is darker grey
 highlight NonText guibg=grey80
-
-" Set highlight for selected text to be reversed with background
-highlight clear Visual
+highlight clear Visual		" select text highlight reversed with background
 highlight Visual 	cterm=inverse gui=inverse term=inverse
 
 " dbext Connection Profiles
-let g:dbext_default_profile_caisview = 'type=ASE:user=dowildeboer:passwd=changeme12:srvname=PRODVIEW_PLCOCAISYBG11:dbname=APF:bin_path=C:\sybase\OCS-12_5\bin'
+"let g:dbext_default_profile_caisview = 'type=ASE:user=dowildeboer:passwd=changeme12:srvname=PRODVIEW_PLCOCAISYBG11:dbname=APF:bin_path=C:\sybase\OCS-12_5\bin'
 let g:dbext_default_profile_ring2 = 'type=ORA:user=dwildebo:passwd=pleasechangeme:srvname=ring2:bin_path=C:\apps\Oracle\product\11.2.0\client_1\BIN'
-let g:dbext_default_profile_PeopleSoft = 'type=ORA:user=dwildeboer:passwd=Wildeboer:srvname=PPS5:bin_path=C:\ORANT\BIN'
+" TODO add the other databases
+"let g:dbext_default_profile_PeopleSoft = 'type=ORA:user=dwildeboer:passwd=Wildeboer:srvname=PPS5:bin_path=C:\ORANT\BIN'
 
 " Tooltips!
-" Show folds if no folds show spelling corrections.
+" Show folds if no folds show spelling corrections. TODO add other?
 function! FoldSpellBalloon()
     let foldStart = foldclosed(v:beval_lnum )
     let foldEnd = foldclosedend(v:beval_lnum)
@@ -219,6 +227,11 @@ set balloonexpr=FoldSpellBalloon()
 set ballooneval
 set balloondelay=400
  
+set spl=en_ca spell	" Enable spell checker
+set spell
+" TODO Change the spell checker options in the right click menu. It's way to 
+" easy to accidentally add misspellings. See :help popup-menu
+
 " Use the increment.vim plugin to increment the numbers
 vnoremap <c-i> :Inc<CR>
 
@@ -236,8 +249,8 @@ set autoread
 set display=lastline,uhex
 set winminheight=0
 
-" Shift-tab to unindent the current line one tab stop.
-" NOTE this messes with autotab completion
+" Shift-tab to unindent the current line one tab stop.  NOTE this messes with 
+" autotab completion. TODO fix perhaps only do it when there is text selected?
 " imap <S-Tab> <C-o><<
 
 " A granular approach to managing sessions:
