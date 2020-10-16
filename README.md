@@ -17,6 +17,8 @@ All my Vim settings from all my computers all in one spot!
 - IM003327 This originally had the most settings setup. Really the source.
 	- setup command line vim to have mouse & scroll
 	- make sure the vimfiles is linked to repository
+	- Move plugins to repo (from C:\Data\Docs\vim\vim82)
+		(Align done)
 	- remove: ~\_vimrc <<===>> ~\\.vim\\\_vimrc
 	- remove: %appdata%\Vim\vimfiles <<===>> 
 	  c:\users\dwildeboer\\.vim\vimfiles
