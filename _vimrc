@@ -163,6 +163,8 @@ nmap <silent> <F8> :echo ":diffupdate\t\t\tF8 Update the diff."<CR>:diffupdate<C
 "TODO turn F9 into a toggle!
 nmap <silent> <F9> :set guioptions+=mT<CR>:set nomousefocus<CR>:echo ":set guioptions+=mT\t\tF9 Show menu and toolbar."<CR>
 nmap <silent> <F10> :set guioptions-=mT<CR>:set mousefocus<CR>:echo ":set guioptions-=mT\t\tF10 Hide menu and toolbar."<CR>
+" TODO F11 could be full screen toggle. 
+nmap <silent> <F12> :NERDTreeToggle<CR>:echo ":NERDTreeToggle\t\tShow/Hide NERDTree."<CR>
 
 
 " MAP SQL database thing 

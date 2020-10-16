@@ -18,7 +18,12 @@ All my Vim settings from all my computers all in one spot!
 	- setup command line vim to have mouse & scroll both bash and cmd.
 	- make sure the vimfiles is linked to repository
 	- Move plugins to repo (from C:\Data\Docs\vim\vim82)
-		Done: Align, SuperTab
+		Done: Align, SuperTab, NERD Tree, Buffer Explorer, Calendar, 
+		dbext, mru.
+		Already good: increment,
+		TODO Remove: genutils, multvals,
+		TODO: SQLUtilities, vcscommand, vcscvs, vcsgit, vcssvk, vcssvn, 
+		check for others
 	- remove: ~\_vimrc <<===>> ~\\.vim\\\_vimrc
 	- remove: %appdata%\Vim\vimfiles <<===>> 
 	  c:\users\dwildeboer\\.vim\vimfiles
