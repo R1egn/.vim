@@ -1,4 +1,9 @@
 ## Done
+- IM00148x
+	- setup new repo
+	- ~~backup old settings (in repository as "backup IM148x 2020-10-xx")~~ 
+	  none to backup.
+	- ~~compare with repo (find vimfiles)~~ none to backup.
 - IM003327 clean up
 	- make sure the vimfiles is linked to repository
 	- Moved plugins to repo (from C:\Data\Docs\vim\vim82)

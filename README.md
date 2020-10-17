@@ -1,33 +1,6 @@
 # .vim
 All my Vim settings from all my computers all in one spot.
 
-## General comments
-- Keep it simple yo.
-- Try to make it work on all systems.
-- All file system stuff should point to the files inside the repository.
-
-## TODO
-- Put link here to done.md
-- Remove from Dropbox and just leave a note there pointing to GitHub.
-	- Dropbox/Documents/viminfo
-	- Dropbox/Documents/Handy Files/\_vimrc
-- IM003327 This originally had the most settings setup. Really the source.
-	- setup command line vim to have mouse & scroll both bash and cmd.
-	- Merge in SAS syntax formatting.
-	- Update other filetype scripts: sas, ps1, nfo .
-- IM00148x
-	- backup old settings (in repository as "backup IM148x 2020-10-xx")
-	- compare with repo (find vimfiles)
-	- setup new repo
-- 2Face 
-	- in Windows make sure the vimfiles is linked
-	- in Windows remove Links to <--> Dropbox : both \_vimrc and /viminfo/
-- Remove the unneeded branches IM003327, 2Face, others? It can all go in 
-  master.
-- check for new Vim plugins.
-	- _fugitive.vim_ Change VCSCommand to a solution that is great for Git.
-	- _AutoComplPop_ Automatically opens popup menu for completions
-
 Setup on a machine
 ==================================================
 
@@ -48,3 +21,24 @@ Link local \_vimrc to repository \_vimrc. (Needs admin permissions.)
 Hard link ~/.vimrc to repository ~/.vim/\_vimrc.
 
 	ln ~/.vim/_vimrc ~/.vimrc
+
+## General comments
+- Keep it simple yo.
+- Try to make it work on all systems.
+- All file system stuff should point to the files inside the repository.
+
+## TODO
+- [./done.md]
+- Remove from Dropbox and just leave a note there pointing to GitHub.
+	- Dropbox/Documents/viminfo
+	- Dropbox/Documents/Handy Files/\_vimrc
+- IM003327 This originally had the most settings setup. Really the source.
+	- setup command line vim to have mouse & scroll both bash and cmd.
+	- Merge in SAS syntax formatting.
+	- Update other filetype scripts: sas, ps1, nfo .
+- Remove the unneeded branches IM003327, 2Face, others? It can all go in 
+  master.
+- check for new Vim plugins.
+	- _fugitive.vim_ Change VCSCommand to a solution that is great for Git.
+	- _AutoComplPop_ Automatically opens popup menu for completions
+- 2Face verify that it is all setup properly.
