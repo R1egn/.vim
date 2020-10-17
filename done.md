@@ -1,4 +1,6 @@
 ## Done
+- Added new Vim plugin: _AutoComplPop_ Automatically opens popup menu for 
+  completions
 - IM00148x
 	- setup new repo
 	- ~~backup old settings (in repository as "backup IM148x 2020-10-xx")~~ 

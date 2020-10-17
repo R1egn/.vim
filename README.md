@@ -38,7 +38,6 @@ Hard link ~/.vimrc to repository ~/.vim/\_vimrc.
 	- Update other filetype scripts: sas, ps1, nfo .
 - Remove the unneeded branches IM003327, 2Face, others? It can all go in 
   master.
-- check for new Vim plugins.
-	- _fugitive.vim_ Change VCSCommand to a solution that is great for Git.
-	- _AutoComplPop_ Automatically opens popup menu for completions
+- Tryout Vim plugin _fugitive.vim_ Change VCSCommand to a solution that is 
+  great for Git.
 - 2Face verify that it is all setup properly.
