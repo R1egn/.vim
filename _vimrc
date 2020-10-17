@@ -32,11 +32,6 @@ if has("gui_running")
     endif
 endif
 
-"ft-syntax-omni
-" This uses the current syntax highlighting for completion.  It can be used
-" for any filetype and provides a minimal language-sensitive completion.
-setlocal omnifunc=syntaxcomplete#Complete
-
 " Save all files in one location so as not to leave files everywhere
 " TODO check for directory %appdata%\Vim if it doesn't exist then create it.
 set dir=%appdata%\Vim,%temp%,$TEMP,$TMP,~/tmp,/var/tmp,/tmp
