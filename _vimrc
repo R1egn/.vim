@@ -19,6 +19,7 @@ set showmatch 			" jump to the matching bracket
 if has("gui_running")
     if has("gui_win32") || has("gui_win64")
 	set guifont=Consolas:h12:cANSI:qCLEARTYPE
+	set renderoptions=type:directx
 	" Ctrl PageUp and PageDown zooms in and out with hard-coded settings
 	nmap <C-PageUp> :set guifont=Courier_New:h16:cANSI:qCLEARTYPE<CR>
 	nmap <C-PageDown> :set guifont=Courier_New:h9:cANSI:qCLEARTYPE<CR>

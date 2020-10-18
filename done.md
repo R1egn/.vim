@@ -20,6 +20,7 @@
   that a good idea? (Yes it is.) ~~Should the repository contain scripts to 
   push out settings to where Vim expects them.~~ Or should Vim be set to look 
   for the repository. (Yes)
+- Steve DONE: link setup, cmd mouse setup, git setup, removed old stuff
 - 2Face DONE in Linux
 - change inside \_vimrc to make Vim look for vimfiles first at ~/.vim/vimfiles
 - the repository should reside under ~/.vim
