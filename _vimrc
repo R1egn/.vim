@@ -70,6 +70,7 @@ set cursorline
 " set cursorcolumn
 " specify when the last window has a status line
 set laststatus=2
+set statusline=%([%M]\ \ %)%f\ \ [%n%R%W%Y]\ %=%<%(\ %-20a%)%(\ %-20{fugitive#statusline()}%)%(\ %-20q%)\ %<%-14.(%l,%c%V%)\ %P'
 " Start Vim with a larger window
 "au GUIEnter * winsize 116 55
 au GUIEnter * set lines=48 columns=116
@@ -159,8 +160,9 @@ nmap <silent> <F8> :echo ":diffupdate\t\t\tF8 Update the diff."<CR>:diffupdate<C
 "TODO turn F9 into a toggle!
 nmap <silent> <F9> :set guioptions+=mT<CR>:set nomousefocus<CR>:echo ":set guioptions+=mT\t\tF9 Show menu and toolbar."<CR>
 nmap <silent> <F10> :set guioptions-=mT<CR>:set mousefocus<CR>:echo ":set guioptions-=mT\t\tF10 Hide menu and toolbar."<CR>
-" TODO F11 could be full screen toggle. 
-nmap <silent> <F12> :NERDTreeToggle<CR>:echo ":NERDTreeToggle\t\tShow/Hide NERDTree."<CR>
+" TODO F11 could be full screen toggle.
+" TODO Clean up F12
+nmap <silent> <F12> :NERDTreeToggle<CR><C-w>n:0Git<CR>:echo "Open :Git NERDTree windows. Only really works for one press."<CR>
 
 
 " MAP SQL database thing 

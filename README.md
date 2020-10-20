@@ -33,6 +33,7 @@ Hard link ~/.vimrc to repository ~/.vim/\_vimrc.
 	- Dropbox/Documents/viminfo
 	- Dropbox/Documents/Handy Files/\_vimrc
 - IM003327 This originally had the most settings setup. Really the source.
+	- Remove vcscommand as it has been replaced with fugitive.
 	- setup command line vim to have mouse & scroll both bash and cmd.
 	- Merge in SAS syntax formatting.
 	- Update other filetype scripts: sas, ps1, nfo .

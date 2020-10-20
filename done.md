@@ -10,7 +10,7 @@
 	- make sure the vimfiles is linked to repository
 	- Moved plugins to repo (from C:\Data\Docs\vim\vim82)
 		Done: Align, SuperTab, NERD Tree, Buffer Explorer, Calendar, 
-		dbext, mru, vcscommand.
+		dbext, mru, vcscommand, fugitive.
 		Already good: increment
 		Removed: showmarks, genutils, multvals, SQLUtilities.
 	- ~~remove: ~\_vimrc <<===>> ~\\.vim\\\_vimrc~~
