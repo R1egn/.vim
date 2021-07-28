@@ -10,7 +10,8 @@ behave mswin
 
 " Stuff I Added:
 set ai  			" Auto-indent
-set formatoptions=crqwanlj	" autowrap comments, use gq
+set formatoptions=crqwanlj	" autowrap comments, use gq --NOTE: Many odd side effects!
+set formatoptions=tcq
 set gdefault			" ":substitute" flag 'g' is on by default. WARNING can break plugins.
 set showmatch 			" jump to the matching bracket
 " TODO fix indentkeys especially for SAS 
