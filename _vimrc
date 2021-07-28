@@ -10,7 +10,8 @@ behave mswin
 
 " Stuff I Added:
 set ai  			" Auto-indent
-set formatoptions=crqwanlj	" autowrap comments, use gq
+set formatoptions=crqwanlj	" autowrap comments, use gq --NOTE: Many odd side effects!
+set formatoptions=tcq
 set gdefault			" ":substitute" flag 'g' is on by default. WARNING can break plugins.
 " NOTE showmatch doesn't seem to make a difference, something is doing this.
 set showmatch 			" jump to the matching bracket
