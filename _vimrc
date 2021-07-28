@@ -12,7 +12,15 @@ behave mswin
 set ai  			" Auto-indent
 set formatoptions=crqwanlj	" autowrap comments, use gq
 set gdefault			" ":substitute" flag 'g' is on by default. WARNING can break plugins.
+" NOTE showmatch doesn't seem to make a difference, something is doing this.
 set showmatch 			" jump to the matching bracket
+set noshowmatch
+" The matchparen plugin supports a timeout when looking for matches, so the 
+" slowness can be avoided by setting those timeout to lower values.
+let g:matchparen_timeout = 2
+let g:matchparen_insert_timeout = 2
+
+
 " TODO fix indentkeys especially for SAS 
 
 " Set font. This is very system dependant.
@@ -70,7 +78,8 @@ set cursorline
 " set cursorcolumn
 " specify when the last window has a status line
 set laststatus=2
-set statusline=%([%M]\ \ %)%f\ \ [%n%R%W%Y]\ %=%<%(\ %-20a%)%(\ %-20{fugitive#statusline()}%)%(\ %-20q%)\ %<%-14.(%l,%c%V%)\ %P'
+"set statusline=%([%M]\ \ %)%f\ \ [%n%R%W%Y]\ %=%<%(\ %-20a%)%(\ %-20{fugitive#statusline()}%)%(\ %-20q%)\ %<%-14.(%l,%c%V%)\ %P'
+set statusline=%([%M]\ \ %)%f\ \ [%n%R%W%Y]\ %=%<%(\ %-20a%)%(\ %-20q%)\ %<%-14.(%l,%c%V%)\ %P'
 " Start Vim with a larger window
 "au GUIEnter * winsize 116 55
 au GUIEnter * set lines=48 columns=116
@@ -149,6 +158,7 @@ xnoremap k gk
 :inoremap jk <esc>l
 
 " <F> Key Mappings (Description in the echo statement.)
+" Could add a view menu
 nmap <silent> <F2> :echo ":set list!\t\t\tF2 Display all characters."<CR>:set list!<CR>
 nmap <silent> <F3> :echo ":set number!\t\t\tF3 Toggle Line Numbering."<CR>:set number!<CR>
 nmap <silent> <F4> :echo ":set relativenumber!\t\tF4 Toggle Relative Line Numbering."<CR>:set relativenumber!<CR>
@@ -186,7 +196,7 @@ if !exists("syntax_on")
 endif
 set hlsearch			" Switch on search pattern highlighting.
 " Text below the last line is darker grey
-highlight NonText guibg=grey80
+highlight NonText guibg=grey60
 highlight clear Visual		" select text highlight reversed with background
 highlight Visual 	cterm=inverse gui=inverse term=inverse
 
