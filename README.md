@@ -6,7 +6,7 @@ Setup on a machine
 
 1. Remove old \_vimrc or merge it into the repository.
 1. Remove old vimfiles or merge it into the repository. (Optional)
-1. Git checkout to users home (`~/`) this will create `~/.git`.
+1. Git clone to users home (`~/`) this will create `~/.git`. Using command `git clone https://github.com/R1egn/.vim`.
 1. In home link \_vimrc File system links must be manually made:
         Create ~/\_vimrc linked to \_vimrc in the repository. Note after trying 
         to write scripts that would create these links automatically I changed 
