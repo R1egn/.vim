@@ -13,11 +13,11 @@ Setup on a machine
         my mind and thought that a manual process is probably much safer.
 
 ### On Windows
-Link local \_vimrc to repository \_vimrc. (Needs admin permissions.)
+Link local \_vimrc to repository \_vimrc. (Needs admin or use Git Bash.)
 
 	mklink %userprofile%\_vimrc %userprofile%\.vim\_vimrc
 
-### On Linux
+### On Linux or Git Bash
 Hard link ~/.vimrc to repository ~/.vim/\_vimrc.
 
 	ln ~/.vim/_vimrc ~/.vimrc
@@ -28,17 +28,9 @@ Hard link ~/.vimrc to repository ~/.vim/\_vimrc.
 - All file system stuff should point to the files inside the repository.
 
 ## TODO
-- [./done.md]
-- Remove from Dropbox and just leave a note there pointing to GitHub.
-	- Dropbox/Documents/viminfo
-	- Dropbox/Documents/Handy Files/\_vimrc
 - IM003327 This originally had the most settings setup. Really the source.
-	- Remove vcscommand as it has been replaced with fugitive.
-	- setup command line vim to have mouse & scroll both bash and cmd.
 	- Merge in SAS syntax formatting.
 	- Update other filetype scripts: sas, ps1, nfo .
+- Cleanup _vimrc
 - Remove the unneeded branches IM003327, 2Face, others? It can all go in 
   master.
-- Tryout Vim plugin _fugitive.vim_ Change VCSCommand to a solution that is 
-  great for Git.
-- 2Face verify that it is all setup properly.
